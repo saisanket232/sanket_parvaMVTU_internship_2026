@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Selecting Elements in JavaScript</h1>
+    <p>1.getElementById() - Selects an element by its ID.</p>
+    <p>2.getElementsByClassName() - Selects elements by their class name.</p>
+    <p>3.getElementsByTagName() - Selects elements by their tag name.</p>
+    <p>4.querySelector() - Selects the first element that matches a CSS selector.</p>
+    <p>5.querySelectorAll() - Selects all elements that match a CSS selector.</p>
+<!-- id -->
+    <p id="p_tags1">Lorem ipsum dolor sit.</p>
+<!-- class -->
+    <p class="p_tag">Lorem ipsum dolor sit amet.</p>
+    <p class="p_tag">Lorem ipsum dolor sit amet.</p>
+<!-- queryselector -->
+    <p id="p_tag2">Lorem ipsum dolor sit amet.</p>
+<!-- queryselectorall -->
+    <p id="p_tag3">Lorem ipsum dolor sit amet.</p>
+    <p id="p_tag3">Lorem ipsum dolor sit amet.</p>
+
+    <script>
+        document.getElementById("p_tags1").style.color="red";
+
+        const classElements=document.getElementsByClassName("p_tag");
+        classElements[0].style.color="blue";
+        classElements[1].style.color="green";
+        console.log(classElements);
+
+        const tags=document.getElementsByTagName("p");
+        tags[2].style.color="orange";
+        console.log(tags);
+
+        document.querySelector("#p_tag2").style.backgroundColor="purple";
+
+        const allTags=document.querySelectorAll("#p_tag3");
+        console.log(allTags);
+    </script>
+</body>
+</html>

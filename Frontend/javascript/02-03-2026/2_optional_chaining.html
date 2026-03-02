@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Chaining in JavaScript</title>
+</head>
+<body>
+    <h1>Optional Chaining in JavaScript</h1>
+    <p>Optional chaining is a feature in JavaScript that allows you to safely access deeply nested object properties without having to explicitly check if each level exists.</p>
+    <p>?. N ?:</p>
+    <script>
+        let a=500;
+        let b=600;
+        let res=(a>b)?true:false;//?:
+        console.log(res);
+
+        const obj1={
+            name:"Sanket",
+            age:21,
+            course:"BCA",
+            address:{
+                city:"Bangalore",
+                pincode:560001,
+                country:"India"
+            },
+            hobbies:["coding","gaming","traveling"],
+            Marks:[80,90,85],
+            isworking:()=>{
+                console.log("yes he is working");
+            }
+        }
+        console.log(obj1);
+        console.log("name :",obj1.name);
+        console.log("city :",obj1.address.city);
+        console.log("hobby:",obj1.hobbies[0]);
+        console.log("marks :",obj1.marks1?.[4]);
+    </script>
+</body>
+</html>

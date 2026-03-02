@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Practice - Destructuring & Spread</title>
+</head>
+<body>
+
+<h2>ES6 Practice - Object Destructuring & Spread Operator</h2>
+
+<script>
+
+console.log("===== OBJECT DESTRUCTURING =====");
+
+const student = {
+    name: "Sanket",
+    age: 21,
+    course: "BCA"
+};
+
+// Basic destructuring
+const { name: studentName, age, course } = student;
+
+console.log("Name:", studentName);
+console.log("Age:", age);
+console.log("Course:", course);
+
+// Default value
+const { city = "Bangalore" } = student;
+console.log("City:", city);
+
+// Function parameter destructuring
+function printStudent({ name, age }) {
+    console.log("From Function:");
+    console.log("Name:", name);
+    console.log("Age:", age);
+}
+
+printStudent(student);
+
+
+
+console.log("===== NESTED OBJECT DESTRUCTURING =====");
+
+const studentWithAddress = {
+    name: "Sanket",
+    address: {
+        city: "Bangalore",
+        pincode: 560001
+    }
+};
+
+// Nested destructuring
+const { address: { city: studentCity, pincode } } = studentWithAddress;
+
+console.log("City:", studentCity);
+console.log("Pincode:", pincode);
+
+
+
+console.log("===== ARRAY CLONING =====");
+
+// Spread Operator
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1];
+
+arr2.push(4);
+
+console.log("Original (spread):", arr1);
+console.log("Cloned (spread):", arr2);
+
+
+// Using slice()
+const arr3 = [10, 20, 30];
+const arr4 = arr3.slice();
+
+arr4.push(40);
+
+console.log("Original (slice):", arr3);
+console.log("Cloned (slice):", arr4);
+
+
+// Using concat()
+const arr5 = [100, 200, 300];
+const arr6 = [].concat(arr5);
+
+arr6.push(400);
+
+console.log("Original (concat):", arr5);
+console.log("Cloned (concat):", arr6);
+
+console.log("===== STUDENT MANAGEMENT =====");
+
+let students = [
+    { id: 1, name: "SanketM", age: 21 },
+    { id: 2, name: "Rahul", age: 22 }
+];
+
+console.log("Original Students:", students);
+
+// Edit Student (update age)
+const updatedStudents = students.map(s => {
+    if (s.id === 2) {
+        return { ...s, age: 23 };
+    }
+    return s;
+});
+
+console.log("After Edit:", updatedStudents);
+
+// Add Student
+const newStudent = { id: 3, name: "Kiran", age: 20 };
+
+const updatedList = [...students, newStudent];
+
+console.log("After Add:", updatedList);
+
+// Delete Student
+const filteredStudents = students.filter(s => s.id !== 1);
+
+console.log("After Delete:", filteredStudents);
+
+</script>
+
+</body>
+</html>

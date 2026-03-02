@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays in JavaScript</h1>
+    <pre>
+        1. push - *
+        2. pop - *
+        3. unshift
+        4. shift
+        5. indexOf - *
+        6. foreach - *
+        7. map - * - map is used to create a new array by performing a function on each element of the array
+        8. filter - *
+        9. reduce - *
+        10. sort
+        11. find
+        12. splice
+        13. each
+        14. some
+    </pre>
+
+    <script>
+        const arr = [1, 2, 3, 4, 5];
+        console.log("Array: ", arr);
+
+        // push - adds element at the end of the array
+        arr.push(6);
+        console.log("After push: ", arr);
+        
+        // pop - removes the last element of the array
+        const ele = arr.pop();
+        console.log("Popped element: ", ele);
+        console.log("After pop: ", arr);
+
+        // shift - removes the first element of the array
+        const ele1 = arr.shift();
+        console.log("Shifted element: ", ele1);
+        console.log("After shift: ", arr);
+
+        // unshift - adds element at the beginning of the array
+        arr.unshift(0);
+        console.log("After unshift: ", arr);
+
+        // indexOf - returns the index of the first occurrence of the specified element in the array, or -1 if it is not found
+        const index = arr.indexOf(5);
+        console.log("Index of 5: ", index);
+
+        // forEach - executes a provided function once for each array element
+        const arr1 = [1, 2.3, true, "world", {name: "pavan"}];
+        arr1.forEach((ele, index) => {
+            console.log("Element: ", ele, "index:", index, "array: ", arr1);
+        });
+
+        // map
+        const arr2 = [2, 4, 6, 8, 10];
+        const arr3 = arr2.map((ele) => {
+            return ele * ele;
+        });
+        console.log("Mapped array: ", arr3);
+
+        // filter - creates a new array with all elements that pass the test implemented by the provided function
+        const arr4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const arr5 = arr4.filter((ele) => {
+            return ele % 2 == 0;
+        });
+        console.log("Filtered array: ", arr5);
+
+        // reduce - executes a reducer function (that you provide) on each element of the array, resulting in a single output value
+        const res6 = arr4.reduce((pre, cur) => {
+            return pre + cur;
+        }, 10);
+        console.log("Reduced value: ", res6);
+    </script>
+</body>
+</html>

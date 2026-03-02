@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Functions in JavaScript</h1>
+    <p>1. built-in functions - Math.floor()</p>
+    <p>2.userdefined functions</p>
+
+    <p>1. function declaration</p>
+    <pre>
+        function fun_name(parameters) {
+            //code
+        }
+        fun_name(args);
+    </pre>
+
+    <p>2. function expression</p>
+    <pre>
+        const fun_name = function(parameters) {
+            //code
+        }
+        fun_name(args);
+    </pre>
+
+    <p>3. arrow function</p>
+    <pre>
+        const fun_name = (parameters) => {
+            //code
+        }
+        fun_name(args);
+    </pre>
+
+    <pre>
+        1. function taking parameters and returning value (1,1)
+        2. function taking parameters and not returning value (1,0)
+        3. function not taking parameters and returning value (0,1)
+        4. function not taking parameters and not returning value (0,0)
+    </pre>
+
+    <p>NaN - Not a Number</p>
+
+
+    <script>
+
+        // function expression
+
+        const add = function(a, b) {
+            return a + b;
+        }
+        const res = add(10,20);
+        console.log("add: ", res);
+
+        const sub = function(a,b){
+            console.log("sub: ", (a - b));
+        }
+        sub(20, 30);
+
+        const mul = function() {
+            return 10 * 30;
+        }
+        const res1 = mul();
+        console.log("mul: ", res1);
+
+        const div = function() {
+            console.log("div: ", (10 / 2));
+        }
+        div();
+
+    </script>
+
+
+    <script> 
+    
+    // arrow function
+
+    const add1 =(a, b) => {
+        return a + b;
+    }
+    const res2 = add1(10, 20);
+    console.log("add1: ", res2);
+
+    const sub1 =(a, b) => {
+        console.log("sub1: ", (a - b));
+    }
+    sub1(20, 30);
+
+    const mul1 = () => {
+        return 10 * 30;
+    }
+    const res3 = mul1();
+    console.log("mul1: ", res3);
+
+    const div1 = () => {
+        console.log("div1: ", (10 / 2));
+    }
+    div1();
+    
+    </script>
+
+    <script>
+
+    // function declaration
+
+    function add2(a, b) {
+        return a + b;
+    }
+    const res4 = add2(10, 20);
+    console.log("add2: ", res4);
+
+    function sub2(a, b) {
+        console.log("sub2: ", (a - b));
+    }
+    sub2(20, 30);
+
+    function mul2() {
+        return 10 * 30;
+    }
+    const res5 = mul2();
+    console.log("mul2: ", res5);
+
+    function div2() {
+        console.log("div2: ", (10 / 2));
+    }
+    div2();
+
+    </script>
+
+</body>
+</html>
