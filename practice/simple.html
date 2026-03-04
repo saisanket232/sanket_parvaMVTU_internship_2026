@@ -12,5 +12,38 @@
     <p id="name">My name is ___</p>
     <button onclick="document.getElementById('name').innerText = 'My name is Sanket'">click</button>
     <button onclick="document.getElementById('name').innerText = 'My name is ___'">reset</button>
+    <br>
+    <br>
+    <!-- changing attributes -->
+     <pre>src,setAttribute</pre>
+     <img src="../Frontend/javascript/23-02-2026/off image.jpeg" alt="off" id="img_id">
+     <br>
+     <p id="status">Light is Off</p>
+     <button onclick="
+document.getElementById('img_id').src='../Frontend/javascript/23-02-2026/on image.jpeg';
+document.getElementById('status').innerText='Light is On';document.getElementById('status').style.color='green'
+">
+Turn On
+</button>
+     <button onclick="
+document.getElementById('img_id').src='../Frontend/javascript/23-02-2026/off image.jpeg';
+document.getElementById('status').innerText='Light is Off';document.getElementById('status').style.color='black'
+">
+Turn Off</button>
+     <button onclick="document.getElementById('img_id').src = ('../Frontend/javascript/23-02-2026/on image.jpeg');document.getElementById('status').innerText='Light is On';document.getElementById('status').style.color='green'">Turn On</button>
+<br><br>
+      <button onclick="
+document.getElementById('img_id').src='../Frontend/javascript/23-02-2026/off image.jpeg';
+document.getElementById('status').innerText='Light is Off';
+document.getElementById('status').style.color='red';
+document.getElementById('status').style.fontSize='30px';
+">
+Reset All
+</button>
+
+<p>Hello From <span id="dell">Bangalore</span></p>
+
+<button onclick="document.getElementById('dell').style.display = 'none'">City</button>
+<button onclick="document.getElementById('dell').style.display = 'block'">City</button>
 </body>
 </html>

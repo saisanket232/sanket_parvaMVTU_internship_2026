@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM Display Example</title>
+</head>
+
+<body>
+
+<h2>innerText and innerHTML</h2>
+
+<!-- Container -->
+<div id="container">
+    <p>This is the container area</p>
+</div>
+
+<!-- Control Buttons -->
+<div>
+
+    <button id="innerTextBtn">InnerText</button>
+    <button id="innerHTMLBtn">InnerHTML</button>
+    <button id="addParagraphBtn">Add Paragraph</button>
+    <button id="clearBtn">Clear</button>
+    <button id="colorBtn">Change Color</button>
+
+</div>
+
+<p id="message">Original Text</p>
+
+<!-- <button onclick="document.getElementById('message').innerText='Text changed using JavaScript'">
+Change Message
+</button> -->
+<!-- Message Section -->
+<p id="message">Original Text</p>
+<button id="changeMessageBtn">Change Message</button>
+
+<script>
+
+/* -------------------------------
+   SELECTING DOM ELEMENTS
+--------------------------------*/
+
+const container = document.getElementById("container");
+
+const innerTextBtn = document.getElementById("innerTextBtn");
+const innerHTMLBtn = document.getElementById("innerHTMLBtn");
+const addParagraphBtn = document.getElementById("addParagraphBtn");
+const clearBtn = document.getElementById("clearBtn");
+const colorBtn = document.getElementById("colorBtn");
+
+const message = document.getElementById("message");
+const changeMessageBtn = document.getElementById("changeMessageBtn");
+
+
+/* -------------------------------
+   EVENT LISTENERS
+--------------------------------*/
+
+innerTextBtn.addEventListener("click", showInnerText);
+
+innerHTMLBtn.addEventListener("click", showInnerHTML);
+
+addParagraphBtn.addEventListener("click", addParagraph);
+
+clearBtn.addEventListener("click", clearContainer);
+
+colorBtn.addEventListener("click", changeColor);
+
+changeMessageBtn.addEventListener("click", changeMessage);
+
+
+/* -------------------------------
+   FUNCTIONS
+--------------------------------*/
+
+function showInnerText() {
+    container.innerText = "<h1>This is InnerText</h1>";
+}
+
+function showInnerHTML() {
+    container.innerHTML = "<h1>This is InnerHTML</h1><p>Learning JavaScript DOM</p>";
+}
+
+function addParagraph() {
+    container.innerHTML += "<p>This paragraph was added using JavaScript</p>";
+}
+
+function clearContainer() {
+    container.innerHTML = "";
+}
+
+function changeColor() {
+    container.style.color = "blue";
+}
+
+function changeMessage() {
+    message.innerText = "Text changed using JavaScript";
+}
+
+</script>
+
+</body>
+</html>

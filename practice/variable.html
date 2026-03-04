@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables in JS</title>
+</head>
+<body>
+    <h2>Var, Let, Const</h2>
+
+    <script>
+        let score=50;
+        console.log("The score is:",score);
+// redeclaring the variable
+        score=90;
+        console.log("The score is:",score);
+        // This is called reassignment.
+
+//         let student = "Rahul";
+//         let student = "Ravi";
+// not allowed to redeclare a variable declared with let
+
+const country="India";
+console.log("The country is:",country);
+// const country="USA";
+
+{
+   let city = "Bengaluru";
+   console.log(city);
+}
+
+// console.log(city);the city is not declared ,block scope
+{
+   const pi = 3.14;
+   console.log(pi);
+}
+
+console.log(pi);
+// pi is not declared, block scope
+    </script>
+</body>
+</html>

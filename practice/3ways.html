@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Ways of js</title>
+</head>
+
+<body>
+    <!-- inline -->
+    <p id="demo1">Hello Sai</p>
+    <button onclick="document.getElementById('demo1').innerHTML = '<h3>Hello World</h3>'">
+Inline JS
+</button>
+
+<!-- internal -->
+
+<p id="demo2">Hello Sanket</p>
+<button onclick="internaljs()">
+Internal JS
+</button>
+
+<script>
+function internaljs() {
+    document.getElementById('demo2').innerHTML = 'Hello World';
+}
+</script>
+</body>
+</html>

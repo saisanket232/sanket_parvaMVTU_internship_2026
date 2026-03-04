@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<body>
+    <h2>Display</h2>
+
+    <p>1.console.log()</p>
+    <p>2.window.alert()</p>
+    <p>3.document.write()</p>  
+    <button onclick="log()">console Log</button>
+
+    <button onclick="alertWindow()">Hi</button>
+    
+    <button onclick="documentWrite()">document write</button>
+    <script>
+        function log(){
+            console.log("User clicked console button");
+        }
+
+        function alertWindow(){
+            window.alert("Hello Sanket");
+        }
+
+        function documentWrite(){
+            document.write("<h2>Hello Sanket</h2><p>Welcome to the world of JavaScript</p>"); 
+        }
+        
+    </script>
+</body>
+</html>
