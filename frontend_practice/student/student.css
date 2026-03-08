@@ -1,0 +1,39 @@
+/* body{
+background-color:#f5f5f5;
+font-family:Arial, sans-serif;
+}
+
+h2{
+text-align:center;
+}
+
+form{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+label{
+font-weight:bold;
+}
+
+button{
+width:100%;
+}
+
+#display{
+margin-top:20px;
+} */
+
+body{
+    background-color: aquamarine;
+}
+
+form{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
