@@ -41,13 +41,13 @@ return;
 display.innerHTML = `
 <div class="card p-3">
 <h4>Student Details</h4>
-<p><strong>Name:</strong> ${name}</p>
-<p><strong>Email:</strong> ${email}</p>
-<p><strong>Phone:</strong> ${phone}</p>
-<p><strong>Course:</strong> ${course}</p>
-<p><strong>Gender:</strong> ${gender}</p>
-<p><strong>Skills:</strong> ${skills}</p>
-<p><strong>Address:</strong> ${address}</p>
+<p>Name: ${name}</p>
+<p>Email: ${email}</p>
+<p>Phone: ${phone}</p>
+<p>Course: ${course}</p>
+<p>Gender: ${gender}</p>
+<p>Skills: ${skills}</p>
+<p>Address: ${address}</p>
 </div>
 `;
 
