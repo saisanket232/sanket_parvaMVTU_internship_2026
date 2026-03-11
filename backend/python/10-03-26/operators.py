@@ -34,7 +34,6 @@ print(number)
 number**=3
 print(number)
 
-
 h1=99
 h2=88
 print("Lesser than :",h1<h2)

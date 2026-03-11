@@ -3,6 +3,9 @@ numbers = [1, 2, 3, 4, 5]
 #numbers[-n:-m] == reverse order
 #numbers=[-5,-4,-3,-2,-1]
 #numbers[-3:-1] == 3 to 4
+
+#slicing is used to get a portion of the list
+#start index is inclusive and stop index is exclusive
 print(numbers)
 print(numbers[-4:-1])
 print("0 to 4:", numbers[0:4])  
