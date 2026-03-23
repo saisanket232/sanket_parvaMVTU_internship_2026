@@ -1,0 +1,47 @@
+oops- object oriented programming system
+
+class- blueprint
+object- instance of a class
+
+real world entities- objects
+
+class- car
+objects- maruti, tata, bmw
+
+attributes- properties
+methods- functions
+
+class- student
+attributes- name, age, roll_no
+methods- study(), sleep(), eat()
+
+
+class- dog
+attributes- name, age, breed
+methods- bark(), wag(), eat()
+
+pillars or characteristics of oops:
+1. encapsulation
+2. abstraction
+3. inheritance
+4. polymorphism
+
+1. encapsulation:
+- binding of data and functions that operate on the data
+- data hiding
+- bundling of data and methods that operate on the data
+
+2. abstraction:
+- hiding the implementation details
+- showing only the essential features
+- example- mobile phone- we use it without knowing the internal details
+
+3. inheritance:
+- acquiring properties of one class from another class
+- parent class- child class
+- example- parent- child- grandchild
+
+4. polymorphism:
+- one name, many forms
+- same method name, different behavior
+- example- + operator- addition for numbers, concatenation for strings

@@ -1,7 +1,7 @@
 # {}
 
 #set properties :
-#unordered,unchangeble,Do Not alllow Duplicated
+#unordered,unchangeble,Do Not allow Duplicated
 
 
 multiplesof2={2,4,6,8,10,10}
