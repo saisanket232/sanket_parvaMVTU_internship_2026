@@ -45,3 +45,39 @@ pillars or characteristics of oops:
 - one name, many forms
 - same method name, different behavior
 - example- + operator- addition for numbers, concatenation for strings
+
+
+Use this to continue smoothly in a new chat: --- **Prompt:** I am learning Python and focusing on building strong coding logic from basics. I have already practiced problems like: * reverse number * palindrome * even/odd digits count and sum * largest, smallest, second largest, second smallest * Armstrong numbers * Strong numbers I want you to continue teaching me step-by-step like a strict teacher: * focus on logic building, not just code * explain mistakes clearly * give me problems in increasing difficulty * make me think first before giving solutions Start from my current level and continue training me with the next problem.
+
+Final Rule (Lock this in your brain)
+Case 1: Instance variable exists
+
+👉 Object uses its own value
+
+Case 2: Instance variable NOT exists
+
+👉 Object uses class value
+
+I have already understood:
+
+self meaning and how it refers to the current object
+difference between instance variables and class variables
+how Python checks object first, then class
+how object data is stored separately
+
+Now continue training me strictly.
+
+Start with a problem that combines:
+
+loops
+number logic
+class (OOP)
+
+Rules:
+
+focus on logic building first, not code
+make me explain steps before coding
+correct my mistakes clearly
+increase difficulty gradually
+
+Begin with the first problem.
