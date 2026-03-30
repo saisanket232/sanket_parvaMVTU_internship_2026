@@ -1,0 +1,7 @@
+inheritance :Inheritance the properties from Base class to Derived class
+types of inheritance:
+1)Single Inheritance-One Base class and One Derived class
+2)Multiple Inheritance-Multiple Base classes and One Derived class
+3)Multilevel Inheritance-One Base class and Multiple Derived classes
+4)Hierarchical Inheritance-Multiple Base classes and One Derived class
+5)Hybrid Inheritance-Combination of two or more types of inheritance
