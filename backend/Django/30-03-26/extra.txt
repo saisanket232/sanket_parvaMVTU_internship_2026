@@ -1,0 +1,107 @@
+Let's start Practical Step 1! 🚀 
+
+I am sitting right next to you, and we are going to do this step-by-step. No rushing, no confusion. Just simple wins.
+
+### ☀️ Day 1: Views + URLs (Return simple text)
+
+Right now, we are going to ignore the database, ignore HTML templates, and ignore forms. We are just going to make our Django app return a simple text message.
+
+#### 🚶‍♂️ Step 1: Write a simple View
+A View is just a Python function that takes a request from a user and returns a response. 
+
+Open your existing file at `demo/views.py` and let's add a fresh, simple function at the very bottom:
+
+```python
+from django.http import HttpResponse
+
+# Add this at the bottom of demo/views.py
+def day1_test(request):
+    return HttpResponse("Hello Sanket! This is Day 1.")
+```
+
+👉 **What this does:**
+1. It creates a logic block called `day1_test`.
+2. It takes a web `request`.
+3. It replies matching exactly what we want using: `HttpResponse` (which just means "send back this text").
+
+Your turn! Add that code to your `demo/views.py` file, save it.
+
+Important files:
+🔹 manage.py
+
+👉 Main controller
+Run server, migrations, etc.
+
+🔹 settings.py
+
+👉 Configuration file
+(Database, apps, etc.)
+
+🔹 urls.py
+
+👉 Routing system
+Connects URL → View
+
+Example:
+
+path('', views.home)
+📦 What is an "App"?
+
+👉 Django project = collection of apps
+
+Example:
+
+student app
+login app
+product app
+
+Create app:
+
+python manage.py startapp students
+🧠 Why Apps?
+
+👉 To organize code cleanly
+👉 Each app = one functionality
+
+🔥 Your First Simple Flow (VERY IMPORTANT)
+
+Let’s build basic:
+
+Step 1: View
+def greet(request):
+    return HttpResponse("Hello Sanket")
+Step 2: URL
+path('greet/', views.greet)
+Step 3: Run server
+python manage.py runserver
+Step 4: Open browser
+http://127.0.0.1:8000/greet/
+
+👉 Output:
+Hello Sanket
+
+🧾 Forms (you already started this)
+
+You wrote:
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+</form>
+
+👉 This means:
+
+Django is creating form automatically
+CSRF token = security (VERY IMPORTANT)
+
+👉 CSRF token prevents hacking requests
+
+🧠 Why you got confused (honest reason)
+
+You tried to learn:
+
+Models
+Forms
+Templates
+CSRF
+Views

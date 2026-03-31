@@ -1,0 +1,43 @@
+{% extends 'student_app/base.html' %}
+
+{% block title %}Student Form{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4 text-center bg-danger text-white p-2">
+    {% if form.instance.pk %}
+        Update Student
+    {% else %}
+        Student Registration Form
+    {% endif %}
+</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    {% for field in form %}
+        <div class="mb-3">
+            <label class="form-label">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                <div class="text-danger">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <button 
+        class="btn {% if form.instance.pk %}btn-success{% else %}btn-primary{% endif %}" 
+        type="submit">
+        
+        {% if form.instance.pk %}
+            Update
+        {% else %}
+            Submit
+        {% endif %}
+
+    </button>
+</form>
+
+{% endblock %}

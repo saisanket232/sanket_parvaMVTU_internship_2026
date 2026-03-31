@@ -1,0 +1,100 @@
+<!-- CSS - Cascading Style Sheets -->
+<!-- Purpose - Styling -->
+
+<!-- There are 3 types of CSS: Inline, Internal & External CSS -->
+<!-- Internal CSS - We will write in a head tag within style tag -->
+<!-- Inline CSS - We will write the css styles within a html tag -->
+<!-- External CSS - We will write the css styles in a seperate file -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- HTML Comment -->
+    <!-- Internal CSS -->
+    <style>
+        /* CSS Comment */
+        /* Syntax: */
+        /*  selector{
+                property1: value1;
+                property2: value2;
+            } */
+            h1{
+                color: red;
+                background-color: lightblue;
+            }
+            /* Colors can be applied in 3 ways: named colors, rgb colors & hex code colors */
+            p{
+                /* named color */
+                color: crimson;
+                /* rgb method */
+                /* rgb : red, green and blue, a- alpha(opacity or transperency) */
+                /* 0 - 255 */
+                /* lowest value: black */
+                /* highest value: white */
+                color: rgb(3, 17, 57);
+                color: rgba(3, 17, 57, 0.75);
+                /* hex-method: hexadecimal value */
+                color: #893f45;
+                background-color: yellow;
+            }
+
+            /* Syntax for Class selector: ".class_name" */
+            .second-h1{
+                color: yellow;
+                background-color: red;
+            }
+
+            /* Multiple Classes can be created and applied for same element
+            Class can be repeated */
+            .para{
+                background-color: blue;
+                color: white;
+            }
+
+            /* Syntax for ID Selector: "#id_name" */
+            /* ID should always be Unique which should not be repeated */
+            #main-heading{
+                color: gold;
+                background-color: navy;
+            }
+
+            h1{
+                color: red;
+                background-color: yellow;
+            }
+
+            .heading-class{
+                color: yellow;
+                background-color: red;
+            }
+
+            #heading-id{
+                color: blue;
+                background-color: yellow;
+            }
+
+            /* Priority: ID > Class > Element */
+            /* Types of Selectors:
+            1) Element Selector: All HTML tags: p, h1-h6, table, body
+            2) Class Selector: User defined keyword or classname
+            3) ID Selector */
+    </style>
+</head>
+
+<body>
+    <h1>This is a Heading</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ex quaerat recusandae molestias placeat nostrum voluptas illum quod quasi itaque?</p>
+    <h1 class="second-h1">This is a second Heading</h1>
+    <h1 class="second-h1">This is a third Heading</h1>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta doloribus sapiente sequi ipsam enim veniam sint eos blanditiis debitis tempore officiis voluptas et animi repellat eius in autem quaerat voluptatum, aliquam corporis excepturi incidunt porro recusandae iste! Quidem expedita totam cum assumenda, ex blanditiis, repudiandae nostrum nisi eligendi eius rerum?</p>
+    <h2>This is a second heading</h2>
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis aliquam consequuntur, possimus repudiandae corrupti facilis doloremque voluptates itaque dicta quo autem molestias ratione eum ex?</p>
+    <h1 id="main-heading">This is a main heading</h1>
+    <h1 class="heading-class" id="heading-id">Heading with Class & ID Attribute</h1>
+</body>
+
+</html>

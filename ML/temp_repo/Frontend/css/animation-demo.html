@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animations - Complete Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(145deg, #0b1120 0%, #1a2639 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      text-shadow: 0 0 20px rgba(0,255,255,0.3);
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2rem;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .demo-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .demo-title {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 0.8rem;
+    }
+
+    /* ============ ANIMATION 1: BOUNCE ============ */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+      50% {
+        transform: translateY(-30px);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+
+    .bounce-ball {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ff6b6b, #ee5253);
+      border-radius: 50%;
+      margin: 0 auto;
+      animation: bounce 1s infinite;
+      box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+    }
+
+    /* ============ ANIMATION 2: SPINNING LOADER ============ */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes dash {
+      0% { stroke-dashoffset: 187; }
+      50% {
+        stroke-dashoffset: 46.75;
+        transform: rotate(135deg);
+      }
+      100% {
+        stroke-dashoffset: 187;
+        transform: rotate(450deg);
+      }
+    }
+
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255,255,255,0.1);
+      border-top: 4px solid #4ecdc4;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .circle-loader {
+      width: 60px;
+      height: 60px;
+      animation: spin 2s linear infinite;
+    }
+
+    .circle-loader circle {
+      fill: none;
+      stroke: #4ecdc4;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-dasharray: 187;
+      stroke-dashoffset: 187;
+      animation: dash 1.5s ease-in-out infinite;
+    }
+
+    /* ============ ANIMATION 3: PULSE & GLOW ============ */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 209, 102, 0.7);
+      }
+      50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+        box-shadow: 0 0 0 20px rgba(255, 209, 102, 0);
+      }
+    }
+
+    .pulse-btn {
+      background: linear-gradient(135deg, #ffd166, #f6b83d);
+      color: #1e1e2f;
+      border: none;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* ============ ANIMATION 4: SLIDE IN SEQUENCE ============ */
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .sequence-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .slide-item {
+      background: rgba(72, 149, 239, 0.2);
+      border: 1px solid #4a90e2;
+      color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      opacity: 0;
+      animation: slideInLeft 0.5s ease forwards;
+    }
+
+    .item1 { animation-delay: 0.2s; }
+    .item2 { animation-delay: 0.4s; }
+    .item3 { animation-delay: 0.6s; }
+    .item4 { animation-delay: 0.8s; }
+
+    /* ============ ANIMATION 5: FLOATING ============ */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-15px) rotate(-5deg);
+      }
+      75% {
+        transform: translateY(15px) rotate(5deg);
+      }
+    }
+
+    .float-container {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .float-element {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+      border-radius: 16px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .float-delay-1 { animation-delay: 0.5s; background: linear-gradient(135deg, #fbc2c2, #ff9a9e); }
+    .float-delay-2 { animation-delay: 1s; background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
+    .float-delay-3 { animation-delay: 1.5s; background: linear-gradient(135deg, #fbc2eb, #fe99c9); }
+
+    /* ============ ANIMATION 6: SHAKE ============ */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+      20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+
+    .shake-element {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #fc5c7d, #6a82fb);
+      border-radius: 20px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .shake-element:hover {
+      animation: shake 0.5s ease-in-out;
+    }
+
+    /* ============ ANIMATION 7: TEXT REVEAL ============ */
+    @keyframes typing {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .typing-demo {
+      width: fit-content;
+      font-size: 1.5rem;
+      color: white;
+      font-family: monospace;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #4ecdc4;
+      animation: 
+        typing 3s steps(30, end),
+        blink 1s step-end infinite;
+      margin: 0 auto;
+    }
+
+    /* ============ ANIMATION 8: 3D FLIP ============ */
+    @keyframes flip {
+      0% { transform: perspective(400px) rotateY(0); }
+      100% { transform: perspective(400px) rotateY(180deg); }
+    }
+
+    .flip-card {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      position: relative;
+      animation: flip 3s infinite;
+      transform-style: preserve-3d;
+    }
+
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .flip-front {
+      background: linear-gradient(135deg, #4158D0, #C850C0);
+    }
+
+    .flip-back {
+      background: linear-gradient(135deg, #FFCC70, #FF8C42);
+      transform: rotateY(180deg);
+    }
+
+    /* ============ ANIMATION 9: WAVE ============ */
+    @keyframes wave {
+      0%, 60%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+    }
+
+    .wave-emoji {
+      font-size: 4rem;
+      display: inline-block;
+      animation: wave 2.5s infinite;
+      transform-origin: 70% 70%;
+    }
+
+    /* ============ ANIMATION 10: PROGRESS BAR ============ */
+    @keyframes progress {
+      0% { width: 0%; }
+      25% { width: 50%; }
+      50% { width: 75%; }
+      75% { width: 90%; }
+      100% { width: 100%; }
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 24px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+      border-radius: 12px;
+      animation: progress 3s ease-in-out infinite;
+    }
+
+    /* ============ ANIMATION 11: ENTRANCE ============ */
+    @keyframes zoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .zoom-box {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+      border-radius: 16px;
+      margin: 0 auto;
+      animation: zoomIn 1s ease-out;
+    }
+
+    /* ============ ANIMATION 12: RIPPLE ============ */
+    @keyframes ripple {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
+      }
+    }
+
+    .ripple-effect {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #a8e6cf);
+      border-radius: 50%;
+      margin: 0 auto;
+      animation: ripple 2s infinite;
+    }
+
+    /* ============ CODE DISPLAY ============ */
+    .code-tag {
+      background: rgba(0,0,0,0.3);
+      color: #a5d6ff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ CSS Animations Demo</h1>
+  <p class="subtitle">12 essential animation patterns • Hover • Click • Loop • Sequence</p>
+
+  <div class="grid">
+    <!-- 1. Bounce -->
+    <div class="demo-card">
+      <div class="demo-title">🔴 1. Bounce</div>
+      <div class="bounce-ball"></div>
+      <span class="code-tag">animation: bounce 1s infinite</span>
+    </div>
+
+    <!-- 2. Loading Spinners -->
+    <div class="demo-card">
+      <div class="demo-title">⏳ 2. Loading</div>
+      <div class="loader-container">
+        <div class="spinner"></div>
+        <div class="circle-loader">
+          <svg viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="28"></circle>
+          </svg>
+        </div>
+      </div>
+      <span class="code-tag">animation: spin 1s linear infinite</span>
+    </div>
+
+    <!-- 3. Pulse Button -->
+    <div class="demo-card">
+      <div class="demo-title">💓 3. Pulse</div>
+      <button class="pulse-btn">Click Me!</button>
+      <span class="code-tag">animation: pulse 2s infinite</span>
+    </div>
+
+    <!-- 4. Slide Sequence -->
+    <div class="demo-card">
+      <div class="demo-title">📝 4. Staggered Slide</div>
+      <div class="sequence-container">
+        <div class="slide-item item1">✨ First item</div>
+        <div class="slide-item item2">🚀 Second item</div>
+        <div class="slide-item item3">💎 Third item</div>
+        <div class="slide-item item4">🎯 Fourth item</div>
+      </div>
+      <span class="code-tag">animation-delay: 0.2s / 0.4s / 0.6s / 0.8s</span>
+    </div>
+
+    <!-- 5. Floating -->
+    <div class="demo-card">
+      <div class="demo-title">🎈 5. Float</div>
+      <div class="float-container">
+        <div class="float-element"></div>
+        <div class="float-element float-delay-1"></div>
+        <div class="float-element float-delay-2"></div>
+        <div class="float-element float-delay-3"></div>
+      </div>
+      <span class="code-tag">animation: float 4s ease-in-out infinite</span>
+    </div>
+
+    <!-- 6. Shake on Hover -->
+    <div class="demo-card">
+      <div class="demo-title">🤝 6. Shake</div>
+      <div class="shake-element">🎯</div>
+      <span class="code-tag">:hover { animation: shake 0.5s }</span>
+    </div>
+
+    <!-- 7. Typing Effect -->
+    <div class="demo-card">
+      <div class="demo-title">⌨️ 7. Typing</div>
+      <div class="typing-demo">CSS Animations are awesome!</div>
+      <span class="code-tag">animation: typing 3s steps(30)</span>
+    </div>
+
+    <!-- 8. 3D Flip -->
+    <div class="demo-card">
+      <div class="demo-title">🔄 8. 3D Flip</div>
+      <div class="flip-card">
+        <div class="flip-front">Front</div>
+        <div class="flip-back">Back</div>
+      </div>
+      <span class="code-tag">transform: perspective() rotateY()</span>
+    </div>
+
+    <!-- 9. Wave Animation -->
+    <div class="demo-card">
+      <div class="demo-title">👋 9. Wave</div>
+      <div style="text-align: center;">
+        <span class="wave-emoji">👋</span>
+        <span style="color: white; display: block; margin-top: 0.5rem;">Hello!</span>
+      </div>
+      <span class="code-tag">animation: wave 2.5s infinite</span>
+    </div>
+
+    <!-- 10. Progress Bar -->
+    <div class="demo-card">
+      <div class="demo-title">📊 10. Progress</div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <span class="code-tag">animation: progress 3s ease-in-out infinite</span>
+    </div>
+
+    <!-- 11. Entrance Animation -->
+    <div class="demo-card">
+      <div class="demo-title">🚪 11. Entrance</div>
+      <div class="zoom-box"></div>
+      <span class="code-tag">animation: zoomIn 1s ease-out</span>
+    </div>
+
+    <!-- 12. Ripple Effect -->
+    <div class="demo-card">
+      <div class="demo-title">💧 12. Ripple</div>
+      <div class="ripple-effect"></div>
+      <span class="code-tag">animation: ripple 2s infinite</span>
+    </div>
+  </div>
+
+  <!-- Animation Cheat Sheet -->
+  <div style="max-width: 1600px; margin: 2rem auto 0;">
+    <div class="demo-card" style="background: rgba(0,0,0,0.3);">
+      <div class="demo-title">📋 Animation Properties Cheat Sheet</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; color: white;">
+        <div>
+          <h3 style="color: #4ecdc4; margin-bottom: 0.5rem;">Shorthand</h3>
+          <code style="color: #a5d6ff; font-size: 0.9rem;">animation: name duration timing delay iteration direction fill play;</code>
+        </div>
+        <div>
+          <h3 style="color: #4ecdc4; margin-bottom: 0.5rem;">Common Patterns</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li>• infinite - loop forever</li>
+            <li>• forwards - retain end state</li>
+            <li>• alternate - back & forth</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color: #4ecdc4; margin-bottom: 0.5rem;">Events (JS)</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li>• animationstart</li>
+            <li>• animationiteration</li>
+            <li>• animationend</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

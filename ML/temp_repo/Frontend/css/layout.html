@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(43 46 86);
+        }
+
+        .container {
+            height: 600px;
+            display: grid;
+            grid-template-columns: repeat(4, 250px);
+            grid-template-rows: repeat(3, 200px);
+            grid-gap: 10px;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .green-box {
+            background-color: rgb(109 190 79);
+        }
+
+        .red-box {
+            background-color: rgb(236 52 55);
+        }
+
+        .yellow-box {
+            background-color: rgb(251 178 47);
+        }
+
+        .layout{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .layout-1{
+            grid-area: 1 / 1 / 4 / 2
+        }
+
+        .layout-2{
+            grid-area: 1 / 2 / 1 / 4;
+        }
+
+        .layout-6{
+            grid-area: 2 / 4 / 4 / 4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="layout layout-1 green-box">Layout 1</div>
+        <div class="layout layout-2 green-box">Layout 2</div>
+        <div class="layout layout-3 red-box">Layout 3</div>
+        <div class="layout layout-4 yellow-box">Layout 4</div>
+        <div class="layout layout-5 red-box">Layout 5</div>
+        <div class="layout layout-6 green-box">Layout 6</div>
+        <div class="layout layout-7 red-box">Layout 7</div>
+        <div class="layout layout-8 yellow-box">Layout 8</div>
+    </div>
+</body>
+
+</html>
