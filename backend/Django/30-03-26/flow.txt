@@ -1,0 +1,57 @@
+1. django-admin startproject project_name
+
+2. DATABASE CONFIGURATION IN SETTINGS.PY
+    
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydjangoproject_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+3. python manage.py startapp module_name
+
+4. INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'myapp',
+]
+
+5. Files
+    - models.py
+    - views.py
+    - urls.py
+    - templates/module_name/file_name.html
+
+6. URL CONFIGURATION IN PROJECT_NAME/urls.py
+
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('', include('admin.site.urls')),
+        path('module_name/', include('module_name.urls')),
+    ]
+-------------------first phase done------------------------
+
+7. Settings in module_name/urls.py
+
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('', views.function_name, name='function_name'),
+    ]
+-------------------second phase done------------------------
+
+8. db schema for your application
+
+9.

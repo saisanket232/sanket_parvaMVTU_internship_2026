@@ -23,6 +23,7 @@ print(df.head())
 print(df.info())
 
 df = pd.read_csv("weather.csv")
+print(df)
 print(df.head())
 print(df.info())
 print(df.columns)
@@ -50,3 +51,56 @@ print(df.iloc[0:1])
 print(df[df["temp"] > 35.5])
 
 print(df[(df["humidity"] > 40) & (df["humidity"] < 50)])
+
+#new column
+df["average-rainfall"]=[20,23.5,15.5,12.5,29,39]
+print(df)
+
+#update column
+df["humidity"]=df["humidity"]+1
+print(df)
+
+#isnull()
+print(df.isnull())
+
+#dropna()
+#df.dropna(inplace=True)
+#print(df)
+
+#fillna()
+df.fillna(0, inplace=True)
+print(df)
+
+#describe()
+print(df.describe())
+
+#mean()
+print(df["humidity"].mean())
+
+#median()
+print(df["humidity"].median())
+
+#mode()
+print(df["humidity"].mode())
+
+#sort_values()
+print(df.sort_values(by="temp"))
+
+#groupby
+data={
+    "Dept":["HR","IT","HR","IT"],
+    "Salary":[20000,30000,40000,50000],
+}
+df=pd.DataFrame(data)
+print(df)
+print(df.groupby("Dept").sum())
+
+#unique()
+print(df["Dept"].unique())
+
+#value_counts()
+print(df["Dept"].value_counts())
+
+#df.to_csv("output.csv", index=False)
+df.to_csv("output.csv", index=False)
+print(df)
