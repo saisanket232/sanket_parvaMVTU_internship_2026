@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Edit Employee -- {{ employee.name }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-add">Update</button>
+        <a href="{% url 'employee_list' %}" class="btn btn-delete">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

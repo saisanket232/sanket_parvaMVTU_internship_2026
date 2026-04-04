@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><title>Employee Registration</title></head>
+<head><title>Employee Registration</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
 <body>
   <h2>Employee Registration</h2>
   <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Register</button>
+    <div class="btn">
+      <button type="submit">Register</button>
+    </div>
   </form>
-  <a href="{% url 'employee_list' %}">View All Employees</a>
+  <div class="btn-center">
+    <a href="{% url 'employee_list' %}">View All Employees</a>
+  </div>
 </body>
 </html>
