@@ -8,11 +8,13 @@
 <div class="container">
     <h1>Delete Employee</h1>
     <p>Are you sure you want to delete <strong>{{ employee.name }}</strong>?</p>
+    <div class="btn-center">
     <form method="POST">
         {% csrf_token %}
         <button type="submit" class="btn btn-delete">Yes, Delete</button>
         <a href="{% url 'employee_list' %}" class="btn btn-add">Cancel</a>
     </form>
+    </div>
 </div>
 </body>
 </html>

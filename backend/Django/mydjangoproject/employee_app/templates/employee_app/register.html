@@ -4,16 +4,16 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+  <div class="container">
   <h2>Employee Registration</h2>
   <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <div class="btn">
-      <button type="submit">Register</button>
-    </div>
+      <button type="submit" class="btn btn-add">Register</button>
   </form>
   <div class="btn-center">
-    <a href="{% url 'employee_list' %}">View All Employees</a>
+    <a href="{% url 'employee_list' %}" class="btn btn-add">View All Employees</a>
   </div>
+</div>
 </body>
 </html>

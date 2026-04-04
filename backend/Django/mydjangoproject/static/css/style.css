@@ -10,9 +10,9 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 40px auto;
-    background: white;
+    background:white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -28,15 +28,14 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
-    table-layout: fixed;
 }
 
 th, td {
     padding: 12px 15px;
     border: 1px solid #ddd;
-    text-align: left;
+    text-align: center;
     border-radius: 5px;
-    word-wrap: break-word;
+    white-space: nowrap; 
     overflow:hidden;
 }
 
@@ -44,8 +43,13 @@ th {
     background-color: #4a90e2;
     color: white;
     border-radius: 5px;
+    text-align: center;
+    white-space: nowrap; 
 }
-
+td:last-child {
+    white-space: nowrap;
+    text-align: center;
+}
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
@@ -67,7 +71,7 @@ tr:nth-child(even) {
 .btn-delete { background-color: #dc3545; color: white; }
 
 .btn:hover { opacity: 0.85; }
- 
+
 .btn-center {
     margin-top: 20px;
     text-align: center;
