@@ -2,6 +2,13 @@ from django.shortcuts import render, redirect,get_object_or_404
 from .forms import StudentRegistrationForm
 from .models import Student
 
+#Django ORM - Object Relational Mapper
+# Create → .save()
+# Read → .all(), .get(), .filter(), .exclude()
+# Update → .save() on existing object
+# Delete → .delete()
+
+
 # Student List Page
 def student_list(request):
     students=Student.objects.all()
