@@ -24,8 +24,14 @@ h1 {
     color: #333;
 }
 
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
+    min-width: 800px;
     border-collapse: collapse;
     margin-top: 15px;
 }
@@ -97,4 +103,143 @@ label {
     font-weight: bold;
     margin-bottom: 4px;
     color: #333;
+}
+
+.alert {
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+/* Add button */
+.add-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+
+.add-btn:hover {
+    background: #0056b3;
+}
+
+/* Note card */
+.note-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #007BFF;   /* 🔥 highlight line */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+.note-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Alternate colors for each note */
+.note-card:nth-child(odd) {
+    background: #f9fbff;
+}
+
+.note-card:nth-child(even) {
+    background: #f1f5ff;
+}
+/* Delete button */
+.delete-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: red;
+}
+
+.delete-btn:hover {
+    text-decoration: underline;
+}
+
+/* Wrapper */
+.notes-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Each note card */
+.note-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 6px solid #007BFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.note-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Alternate colors */
+.note-card:nth-child(odd) {
+    background: #f9fbff;
+}
+
+.note-card:nth-child(even) {
+    background: #eef3ff;
+}
+
+/* Title */
+.note-card h3 {
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* Content */
+.note-card p {
+    color: #555;
+}
+
+/* Delete button */
+.delete-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #ff4d4d;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.delete-btn:hover {
+    background: #cc0000;
+}
+
+/* Add button */
+.add-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    background: #007BFF;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.add-btn:hover {
+    background: #0056b3;
 }

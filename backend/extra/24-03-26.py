@@ -1,4 +1,4 @@
-#reverse the number
+ #reverse the number
 
 #% (Modulus Operator)
 #This gives the remainder after division

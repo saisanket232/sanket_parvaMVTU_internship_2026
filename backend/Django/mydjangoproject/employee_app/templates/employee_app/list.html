@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
   <title>Employee List</title>
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 <div class="container">
@@ -11,10 +12,12 @@
   <form method="GET" style="margin-bottom: 20px;">
     <input type="text" name="q" placeholder="Search by name" 
            value="{{ request.GET.q }}" 
-           style="padding: 8px; width: 250px;">
+           style="padding: 8px; width: 250px; margin-top: 20px;">
     
-    <button type="submit" class="btn btn-primary">Search</button>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Search</button>
 </form>
+
+  <div class="table-container">
   <table border="1">
     <tr>
       <th>Name</th><th>Email</th><th>Phone</th>
@@ -40,9 +43,11 @@
     </tr>
     {% endfor %}
   </table>
+  </div>
   <div class="btn-center">
     <a href="{% url 'register_employee' %}" class="btn btn-add">Register New Employee</a>
   </div>
+
 </div>
 </body>
 </html>

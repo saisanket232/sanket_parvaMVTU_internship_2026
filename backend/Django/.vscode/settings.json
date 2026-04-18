@@ -1,0 +1,7 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/djangoEnv/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/mydjangoproject"
+  ],
+  "python.analysis.typeCheckingMode": "basic"
+}

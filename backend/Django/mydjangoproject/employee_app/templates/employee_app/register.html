@@ -6,6 +6,13 @@
 <body>
   <div class="container">
   <h2>Employee Registration</h2>
+  {% if messages %}
+  {% for message in messages %}
+    <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-success{% endif %}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
   <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
@@ -15,5 +22,6 @@
     <a href="{% url 'employee_list' %}" class="btn btn-add">View All Employees</a>
   </div>
 </div>
+
 </body>
 </html>

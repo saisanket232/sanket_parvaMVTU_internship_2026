@@ -8,6 +8,13 @@
 <div class="container">
     <h1>Delete Employee</h1>
     <p>Are you sure you want to delete <strong>{{ employee.name }}</strong>?</p>
+    {% if messages %}
+  {% for message in messages %}
+    <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-success{% endif %}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
     <div class="btn-center">
     <form method="POST">
         {% csrf_token %}
@@ -15,6 +22,7 @@
         <a href="{% url 'employee_list' %}" class="btn btn-add">Cancel</a>
     </form>
     </div>
+    
 </div>
 </body>
 </html>
