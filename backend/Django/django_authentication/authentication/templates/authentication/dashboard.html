@@ -1,0 +1,12 @@
+{% extends 'authentication/base.html' %}
+{% block content %}
+    <h1 class="text-secondary">Hello {{ request.user.username }}, Your Details are as follows:</h1>
+    <br>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Username: {{ request.user.username }}</li>
+        <li class="list-group-item">Full Name: {{ request.user.first_name }} {{ request.user.last_name }}</li>
+        <li class="list-group-item">Email ID: {{ request.user.email }}</li>
+        <li class="list-group-item">Registered Date: {{ request.user.date_joined }}</li>
+        <li class="list-group-item">Last Login Time: {{ request.user.last_login }}</li>
+    </ul>
+{% endblock %}
